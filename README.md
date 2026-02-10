@@ -27,13 +27,13 @@ Add this to your `~/.zshrc`:
 export GEMINI_API_KEY="your_api_key_here"
 
 # Wrapper
-function gemini() { ~/bin/gemini-shell-wizard-bin "$@"; }
+function gemini-wizard() { ~/bin/gemini-shell-wizard-bin "$@"; }
 
 # Widget (Handles >>>)
 function magic-enter() {
   if [[ "$BUFFER" == \>\>\>* ]]; then
     print -s "$BUFFER"  # Save to history
-    BUFFER=" gemini \"${BUFFER:3}\""
+    BUFFER=" gemini-wizard \"${BUFFER:3}\""
   fi
   zle accept-line
 }
@@ -41,7 +41,7 @@ zle -N magic-enter
 bindkey "^M" magic-enter
 
 # Pipe alias
-alias gem="gemini"
+alias gem="gemini-wizard"
 
 ```
 
