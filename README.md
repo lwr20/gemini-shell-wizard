@@ -33,7 +33,7 @@ function gemini-wizard() { ~/bin/gemini-shell-wizard-bin "$@"; }
 function magic-enter() {
   if [[ "$BUFFER" == \>\>\>* ]]; then
     print -s "$BUFFER"  # Save to history
-    BUFFER=" gemini-wizard \"${BUFFER:3}\""
+    BUFFER="gemini-wizard \"${BUFFER:3}\""
   fi
   zle accept-line
 }
