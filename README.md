@@ -7,7 +7,7 @@ A lightweight, context-aware AI assistant for your Zsh terminal. It detects your
 1. **Environment Diagnosis:** On first run, the tool detects your OS (Ubuntu/Arch/macOS), Shell (Zsh/Bash), and CPU architecture.
 2. **Smart Caching:** This info is saved to `~/.gemini-env` so it doesn't slow down future commands.
 3. **Context Injection:** When you ask a question (`>>> ...`), the tool reads this cached file and prepends it to the prompt.
-* *Result:* Gemini knows to suggest `apt` for Ubuntu or `brew` for macOS without you asking.
+  * *Result:* Gemini knows to suggest `apt` for Ubuntu or `brew` for macOS without you asking.
 4. **Command Execution:** The tool parses Gemini's response for code blocks and asks for your confirmation before running anything.
 
 ## ⚡ Quick Setup
@@ -50,6 +50,7 @@ Then run `source ~/.zshrc`.
 ## 🚀 Usage
 
 **1. Ask Questions**
+
 Use `>>>` to ask anything. It knows your OS (Ubuntu/Mac/etc).
 
 ```bash
@@ -58,6 +59,7 @@ Use `>>>` to ask anything. It knows your OS (Ubuntu/Mac/etc).
 ```
 
 **2. Debug Errors**
+
 Pipe output to `gem` to explain or fix it.
 
 ⚠️ Conflict Warning: This aliases `gem` to Gemini. If you are a Ruby developer, this will break your package manager. Then again, if you're a Ruby developer, you're probably used to things breaking. (Use \gem to bypass).
@@ -68,6 +70,7 @@ cat error.log | gem fix this
 ```
 
 **3. Execute Commands**
+
 Gemini suggests commands. You confirm them with `y` before they run.
 
 ```text
